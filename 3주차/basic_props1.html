@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+      //구조 분해 할당 기법
+      //   function Food({ fav, fav1 }) {
+      //     return (
+      //       <div>
+      //         <h1>i like {fav}</h1>
+      //         <h1>i like {fav1}</h1>
+      //       </div>
+      //     );
+      //   }
+
+      function Food(props) {
+        return (
+          <div>
+            <h1>i like {props.fav}</h1>
+            <h1>i like {props.fav1}</h1>
+          </div>
+        );
+      }
+      function Order() {
+        return (
+          <div>
+            <Food fav="kimchi" />
+            <Food fav="oragne" />
+            <Food fav="chugumi" />
+            <Food fav="gimbab" />
+          </div>
+        );
+      }
+      ReactDOM.render([<Order />], root);
+    </script>
+  </body>
+</html>
