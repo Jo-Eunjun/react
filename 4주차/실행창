@@ -1,0 +1,34 @@
+import logo from "./logo.svg";
+import "./App.css";
+const foodLike = [
+  {
+    name: "kimchi",
+    image:
+      "https://mblogthumb-phinf.pstatic.net/MjAyMTEyMjJfMjY2/MDAxNjQwMTY2MDczODUz.lqKJ23z3bWE9wx5u6iWitqOpiuF0yyMhdxIRHWvYnbIg.jm0jCni37JsU8kqQdGTU3KSu4iCm8YX-pb-npwSWW2Qg.JPEG.arang1981/20211217%EF%BC%BF193808.jpg?type=w800",
+  },
+  {
+    name: "gimbab",
+    image:
+      "https://recipe1.ezmember.co.kr/cache/recipe/2022/06/18/a789980b2cb47c5c7242082759259ded1.jpg",
+  },
+];
+function Food({ name, picture }) {
+  return (
+    <div>
+      <h1> i like {name}</h1>
+      <img src={picture} />
+    </div>
+  );
+}
+function App() {
+  return (
+    <div>
+      {foodLike.map((dish) => (
+        //return 할 값이 없으면 소괄호, 있으면 중괄호
+        <Food name={dish.name} picture={dish.image} /> //문자열이지만 상수가 아니라서 {}를 쳐줘야함
+      ))}
+    </div>
+  );
+}
+
+export default App;
