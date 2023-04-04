@@ -1,0 +1,17 @@
+import logo from "./logo.svg";
+import "./App.css";
+import MyComponent from "./Mycomponent";
+import MyComponent1 from "./MyComponent1";
+import TestState from "./TestState";
+function App() {
+  //리액트는 칠드런이기 때문에 {props.children}
+  return <TestState />;
+  // <MyComponent1 name="Eunjun" favoriteNumber={10} shitNumber={20}>
+  //   리액트
+  // </MyComponent1>
+
+  // return <Mycomponent />;
+  // 스트링형이 아닐때는 무조건 {}를 쳐줘야함
+  //ex) <Mycomponent name = {1}>
+}
+export default App;
