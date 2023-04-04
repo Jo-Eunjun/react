@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>react2</title>
+        <!--cdn =content delivery network-->
+        <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script>
+            const root = document.getElementById('root');
+            let count_num = 0;
+
+            const span = React.createElement('span', null, `Total Count Num : ${count_num}`);
+            const plusBtn = React.createElement(
+                'button',
+                {
+                    onClick: () => {
+                        count_num += 1;
+                    },
+                },
+                'Click + 1'
+            );
+            // <span>`total Count num : ${count_num}`</span>
+            //babeljs.io
+            const minusBtn = React.createElement(
+                'button',
+                {
+                    onClick: () => {
+                        count_num -= 1;
+                    },
+                },
+                'Click - 1'
+            );
+            const container = React.createElement('div', null, [span, plusBtn, minusBtn]);
+            ReactDOM.render(container, root);
+        </script>
+    </body>
+</html>
