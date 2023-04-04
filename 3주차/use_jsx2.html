@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="국밥집아줌마"></div>
+    <script type="text/babel">
+      const root = document.getElementById("국밥집아줌마");
+      let count_num = 0;
+      function Span() {
+        return <span id="title">Total Count :{count_num}</span>;
+      }
+
+      function Button() {
+        return (
+          <button
+            onClick={() => {
+              count_num = count_num + 1;
+              ReactDOM.render(<Order />, root);
+            }}
+          >
+            Click + 1
+          </button>
+        );
+      }
+      function Button1() {
+        return (
+          <button
+            onClick={() => {
+              count_num = count_num - 1;
+              ReactDOM.render(<Order />, root);
+            }}
+          >
+            Click - 1
+          </button>
+        );
+      }
+      function Order() {
+        return (
+          <div>
+            <Span />
+            <Button />
+            <Button1 />
+          </div>
+        );
+      }
+
+      ReactDOM.render([<Order />], root);
+    </script>
+  </body>
+</html>
