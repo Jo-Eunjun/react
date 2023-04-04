@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+      let count_num = 0;
+
+      const plusBtn = (
+        <button
+          id="plusBtn"
+          onClick={() => {
+            count_num += 1;
+            ReactDOM.render(container, root);
+          }}
+        >
+          plus
+        </button>
+      );
+      const minusBtn = (
+        <button
+          id="minusBtn"
+          onClick={() => {
+            count_num -= 1;
+            ReactDOM.render(container, root);
+          }}
+        >
+          minus
+        </button>
+      );
+      const span = (
+        <span
+          id="span"
+          onMouseEnter={() => {
+            console.log("mouseenter!!");
+            ReactDOM.render(container, root);
+          }}
+        >
+          Total Count Num : {count_num}
+        </span>
+      );
+      function Btn() {
+        return (
+          <button
+            id="btn"
+            onClick={() => {
+              console.log("no!!!");
+              ReactDOM.render(container, root);
+            }}
+          >
+            Click me
+          </button>
+        );
+      }
+      const container = React.createElement("div", null, [
+        span,
+        <Btn />, //JSX 함수 호출
+        plusBtn,
+        minusBtn,
+      ]);
+      ReactDOM.render(container, root);
+    </script>
+  </body>
+</html>
